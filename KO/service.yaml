@@ -1,0 +1,58 @@
+openapi: 3.0.2
+info:
+  version: '0.1'
+  title: 'magicapp1'
+  description: magicapp1
+servers:
+  - url: /99999/magicapp1
+    description: magicapp1
+paths:
+  /magicapp1:
+    post:
+      description: magicapp1
+      operationId: magicapp1
+      requestBody:
+        description: inputs
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/input'
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/output'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'https://demo.kgrid.org/schemas/basicerror.yaml'
+components:
+  schemas:
+    input:
+      required:
+        - age
+      properties:
+        age:
+          type: integer
+          example: 18
+        # parsons_score:
+        #   type: integer
+        #   example: 0
+        # trial_considered:
+        #   type: integer
+        #   example: 0
+        # patient.features:
+        #   type: array
+          # items:
+            # $ref: 'https://demo.kgrid.org/schemas/patientFeature.yaml'
+    output:
+      required:
+        - op
+      properties:
+        result:
+          type: object
