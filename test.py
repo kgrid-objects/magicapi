@@ -1,52 +1,59 @@
-import requests
+# check if requests module installed
+try:
+    import json, subprocess, requests
+except ModuleNotFoundError:
+    manual = input("""
+    Missing requests module ...
+    Download it yourself?
 
-import json
+    Type 'no' to try auto-install: """)
+    if manual == 'no':
+        subprocess.call('pip install requests')
+    else:
+        print('\n Please manually install the requests module. \n')
+        raise ModuleNotFoundError()
 
+# consult user for specific resource number
 while True:
-  num = input("Please enter a guideline id: ")
+  num = input("\n Please enter a guideline id: ")
   try:
     val = int(num)
-    print("Input is an integer number.")
-    print("Input number is: ", val)
+    print("\n Input is an integer number. \n Input number is:", val)
     break;
   except ValueError:
     try:
       float(num)
-      print("Input is an float number.")
-      print("Input number is: ", val)
+      print("\n Input is an float number. \n Input number is:", val)
       break;
     except ValueError:
-      print ("This is not a number. Please enter a valid number")
+      print ("\n This is not a number. \n Please enter a valid number")
 
-# input for specific recommendation from MAGIC App
-
+# api login for MAGIC App
 auth = {'username': 'apitest@magicapp.org', 'password': 'apitest'}
-
 url = 'https://api.magicapp.org/authenticate'
-
 r = requests.options(url)
 
-token = r.cookies['XSRF-TOKEN']
+try:
+    token = r.cookies['XSRF-TOKEN']
+except KeyError:
+    print('\n Sorry, the MagicApp API may be down... or not reachable right now \n')
 cookies = {'XSRF-TOKEN': token}
 headers = {'X-XSRF-TOKEN': token, 'Referer': url}
 
 r = requests.post(url, data=auth, headers=headers, cookies=cookies)
-
 authToken = r.json()['token']
 headers['X-Auth-Token'] = authToken
 
-# add input recommendations
+# lookup and send back specific resource to the user
 # r = requests.get('https://www.magicapp.org/api/v1/guidelines/2', headers=headers)
 # r = requests.get('https://app.magicapp.org/api/v1/recommendations/59519', headers=headers)
 r = requests.get('https://app.magicapp.org/api/v1/recommendations/' + num, headers=headers)
-
-
 print(r.status_code)     # To print http response code
 print(r.text)            # To print formatted JSON response
 
-
+# save results to index.js file
 with open("test_one.js") as f, open("index.js", 'w') as o:
-    data=f.read()
+    data = f.read()
     data = data.replace("var rec;","var rec = "+r.text)
     o.write(data)
 
