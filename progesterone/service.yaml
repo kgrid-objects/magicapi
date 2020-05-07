@@ -1,0 +1,64 @@
+openapi: 3.0.2
+info:
+  version: '0.1'
+  title: 'magicapp2'
+  description: magicapp2
+servers:
+  - url: /99999/magicapp2
+    description: magicapp2
+paths:
+  /magicapp1:
+    post:
+      description: magicapp2
+      operationId: magicapp2
+      requestBody:
+        description: inputs
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/input'
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/output'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'https://demo.kgrid.org/schemas/basicerror.yaml'
+components:
+  schemas:
+    input:
+      required:
+        - chronic_noncanc_pain
+        - no_substance_use
+        - substance_use
+        - begin_long_term
+      properties:
+        chronic_noncanc_pain:
+          type: boolean
+          example: false
+        no_substance_use:
+          type: boolean
+          example: false
+        substance_use:
+          type: boolean
+          example: false
+        begin_long_term:
+          type: boolean
+          example: false
+        # patient.features:
+        #   type: array
+          # items:
+            # $ref: 'https://demo.kgrid.org/schemas/patientFeature.yaml'
+    output:
+      required:
+        - op
+      properties:
+        result:
+          type: object

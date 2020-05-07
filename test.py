@@ -52,7 +52,7 @@ print(r.status_code)     # To print http response code
 print(r.text)            # To print formatted JSON response
 
 # save results to index.js file
-with open("test_one.js") as f, open("index.js", 'w') as o:
+with open("baseindex.js") as f, open("index.js", 'w') as o:
     data = f.read()
     data = data.replace("var rec;","var rec = "+r.text)
     o.write(data)

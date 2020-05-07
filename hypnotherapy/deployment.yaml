@@ -1,5 +1,5 @@
 endpoints:
-  /cnstap:
+  /magicapp:
     adapterType: JAVASCRIPT
     artifact: src/index.js
     entry: magicapp

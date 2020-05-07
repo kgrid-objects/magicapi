@@ -1,0 +1,21 @@
+{
+    "@id": "99999-magicapp1",
+    "@type": "koio:KnowledgeObject",
+    "identifier": "ark:/99999/magicapp3",
+    "version": "1.0.0",
+    "title": "magicapp test 3 - opiods",
+    "contributors": "Kgrid Team",
+    "description": "Knowledge Object Description",
+    "keywords": [
+        "knowledge",
+        "object"
+    ],
+    "hasServiceSpecification": "service.yaml",
+    "hasDeploymentSpecification": "deployment.yaml",
+    "hasPayload": [
+        "src/index.js"
+    ],
+    "@context": [
+        "http://kgrid.org/koio/contexts/knowledgeobject.jsonld"
+    ]
+}

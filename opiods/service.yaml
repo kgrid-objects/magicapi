@@ -1,0 +1,56 @@
+openapi: 3.0.2
+info:
+  version: '0.1'
+  title: 'magicapp2'
+  description: magicapp2
+servers:
+  - url: /99999/magicapp2
+    description: magicapp2
+paths:
+  /magicapp1:
+    post:
+      description: magicapp2
+      operationId: magicapp2
+      requestBody:
+        description: inputs
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/input'
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/output'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'https://demo.kgrid.org/schemas/basicerror.yaml'
+components:
+  schemas:
+    input:
+      required:
+        - preterm_hist
+        - short_cervix
+      properties:
+        preterm_hist:
+          type: boolean
+          example: false
+        short_cervix:
+          type: boolean
+          example: true
+        # patient.features:
+        #   type: array
+          # items:
+            # $ref: 'https://demo.kgrid.org/schemas/patientFeature.yaml'
+    output:
+      required:
+        - op
+      properties:
+        result:
+          type: object
