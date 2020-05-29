@@ -70,7 +70,7 @@ function magicapp(info){
   }
 
   if (inputvalidated) {
-    op['result'] =  recommendation;
+    op['result'] =  rec['text'];
     op['success'] = 1;
     op['errorMessage'] = '-';
   }

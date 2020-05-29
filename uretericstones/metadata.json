@@ -1,9 +1,9 @@
 {
-    "@id": "99999-magicapp2",
+    "@id": "99999-magicapp1",
     "@type": "koio:KnowledgeObject",
-    "identifier": "ark:/99999/magicapp2",
+    "identifier": "ark:/99999/magicapp1",
     "version": "1.0.0",
-    "title": "magicapp test 2 - progesterone",
+    "title": "test 1 - MAGICApp guidelineId 2915",
     "contributors": "Kgrid Team",
     "description": "Knowledge Object Description",
     "keywords": [

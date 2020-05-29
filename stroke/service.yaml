@@ -1,16 +1,16 @@
 openapi: 3.0.2
 info:
   version: '0.1'
-  title: 'magicapp2'
-  description: magicapp2
+  title: 'magicapp3'
+  description: magicapp3
 servers:
-  - url: /99999/magicapp2
-    description: magicapp2
+  - url: /99999/magicapp3
+    description: magicapp3
 paths:
   /magicapp:
     post:
-      description: magicapp2
-      operationId: magicapp2
+      description: magicapp3
+      operationId: magicapp3
       requestBody:
         description: inputs
         required: true
@@ -35,15 +35,11 @@ components:
   schemas:
     input:
       required:
-        - hist_preterm
-        - short_cervix
+        - reperfusion_eligible
       properties:
-        hist_preterm:
+        reperfusion_eligible:
           type: boolean
           example: false
-        short_cervix:
-          type: boolean
-          example: true
         # patient.features:
         #   type: array
           # items:

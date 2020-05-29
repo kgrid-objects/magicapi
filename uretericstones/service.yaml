@@ -1,16 +1,16 @@
 openapi: 3.0.2
 info:
   version: '0.1'
-  title: 'magicapp2'
-  description: magicapp2
+  title: 'magicapp1'
+  description: magicapp1
 servers:
-  - url: /99999/magicapp2
-    description: magicapp2
+  - url: /99999/magicapp1
+    description: magicapp1
 paths:
-  /magicapp1:
+  /magicapp:
     post:
-      description: magicapp2
-      operationId: magicapp2
+      description: magicapp1
+      operationId: magicapp1
       requestBody:
         description: inputs
         required: true
@@ -35,15 +35,11 @@ components:
   schemas:
     input:
       required:
-        - preterm_hist
-        - short_cervix
+        - urinary_stones_confirmed
       properties:
-        preterm_hist:
+        urinary_stones_confirmed:
           type: boolean
           example: false
-        short_cervix:
-          type: boolean
-          example: true
         # patient.features:
         #   type: array
           # items:

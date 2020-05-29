@@ -1,11 +1,11 @@
 {
-    "@id": "99999-magicapp1",
+    "@id": "99999-magicapp3",
     "@type": "koio:KnowledgeObject",
     "identifier": "ark:/99999/magicapp3",
     "version": "1.0.0",
-    "title": "magicapp test 3 - opiods",
+    "title": "MAGICapp test 3 - AUS Stroke",
     "contributors": "Kgrid Team",
-    "description": "Knowledge Object Description",
+    "description": "Prehospital Care Stroke Recommendations",
     "keywords": [
         "knowledge",
         "object"
