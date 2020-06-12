@@ -1,14 +1,35 @@
 # magicapi
-Using MAGIC App API to send guideline recommendation(s) to Knowledge Object (KO)
+The MAGICApp API is utilized in this repository collection to send guideline recommendation(s) to Knowledge Objects (KO). 
 
 ## File Structure
-_Under Construction_
+From a file-system perspective, all KOs conform to the following hierarchical structure of folders and files:
+
+myfirstKO\
+|--metadata.json\
+|--service.yaml\
+|--deployment.yaml\
+|--src\
+&nbsp;&nbsp;&nbsp;|--payload_file_1\
+&nbsp;&nbsp;&nbsp;.\
+&nbsp;&nbsp;&nbsp;.\
+&nbsp;&nbsp;&nbsp;.\
+&nbsp;&nbsp;&nbsp;|-payload_file_n
+
+
+Every KO has:
+a metadata.json file with descriptive information
+a service.yaml file describing an API service in the OpenAPI 3.0 format
+a deployment.yaml file specifying the runtime environment(s), the entry point, etc.
 
 
 ## How to Run Tests
-_Under Construction_
+By running the test.py file with the corresponding baseindex.js for the Knowledge Object will create an index.js file for the KO with the recommendation(s) retrieved from the MAGICApp. 
 
-A KO is comprised of a deployment.yaml, metadata.json, service.yaml, and src folder
-with an index.js. Running test.py with the specific baseindex.js for the KO will create
-an index.js for the KO with the recommendation(s) from the MAGICapp. Copy this index.js into the src folder of the KO and compress the KO into a .zip file to upload
-to the KGrid Library.
+Copy this index.js into the src folder of the KO and compress the KO into a .zip file to upload
+it into the [KGrid Library](http://library.kgrid.org/).
+
+Once uploaded to the KGrid Library, locate the KO and click on the Live Demo icon to send the KO to the Activator. 
+
+From there, click the button that leads to Swagger Editor to Try Out the Knowledge Object. 
+
+
