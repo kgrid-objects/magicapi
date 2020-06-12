@@ -1,5 +1,5 @@
 # magicapi
-The MAGICApp API is utilized in this repository collection to send guideline recommendation(s) to Knowledge Objects (KO). 
+The [MAGICApp API](https://app.magicapp.org/#/guidelines) is utilized in this repository collection to send guideline recommendation(s) to Knowledge Objects (KO). 
 
 ## File Structure
 From a file-system perspective, all KOs conform to the following hierarchical structure of folders and files:
